@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
-
+const todoRoutes = require('./routes/todoRoutes');
 // Connect to database
 connectDB();
 
@@ -15,6 +15,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/users', userRoutes);
+app.use('/api/todos', todoRoutes);
 
 // Root/Health route
 app.get('/', (req, res) => {
